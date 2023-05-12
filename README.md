@@ -31,6 +31,8 @@ Separately, you'll also need to install
 
 as is appropriate for your use case.
 
+Moreover, if you want to reproduce the original EffOCR recognizer training, you'll need to download Japanese and English font files from [here](https://www.dropbox.com/scl/fo/bp1gee1szxcmc8wa6ht5b/h?dl=0&rlkey=3b1jlavy9txcymu1gsz370syu) and copy the `english_font_files` and `japan_font_files` folders directly into the first level of this repo.
+
 ## Dataset Formatting
 
 For the purposes of training and evaluating EffOCR localizers and recognizers, we require that your dataset of interest is transcribed into the [COCO format](https://www.immersivelimit.com/tutorials/create-coco-annotations-from-scratch) with annotations at the character level, and with image level text fields that denote the transcription of the text line image, e.g., 
