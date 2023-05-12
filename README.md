@@ -1,6 +1,6 @@
 # EffOCR
 
-This repository contains the official implementation of [EffOCR](https://arxiv.org/abs/2304.02737). EffOCR is an OCR architecture that emphasizes sample (and computational) efficiency without compromising on accuracy! EffOCR accomplishes this by treating text recognition not as a sequence/language modeling task, but as a metric learning/image retrieval task.
+This repository contains the official implementation of EffOCR. EffOCR is an OCR architecture that emphasizes sample (and computational) efficiency without compromising on accuracy! EffOCR accomplishes this by treating text recognition not as a sequence/language modeling task, but as a metric learning/image retrieval task.
 
 ![EffOCR vs. Seq2Seq](misc/arch.png)
 
@@ -15,7 +15,6 @@ In this repo, we provide tools for training your own EffOCR models for your part
 Clone this repo, then install [requirements.txt](requirements.txt) in an environment with `Python >= 3.7`. (To accommodate downloading GPU-compatible FAISS, as referenced below, it can be useful to first set up and activate a [conda](https://docs.anaconda.com/anaconda/install/index.html) environment before installing these required dependencies.)
 
 ```bash
-git clone git@github.com:dell-research-harvard/effocr.git
 cd effocr
 pip install -r requirements.txt
 ```
@@ -129,7 +128,7 @@ import timm
 print(timm.list_models(pretrained=True))
 ```
 
-We recommend many of the models used in the [EffOCR paper](https://arxiv.org/abs/2304.02737), including:
+We recommend many of the models used in the EffOCR paper, including:
  - `mobilenetv3_small_050`
  - `convnext_tiny`
  - `xcit_small_12_p8_224`
@@ -156,7 +155,7 @@ python ./infer_effocr.py \
     --save_output <optional, directory to save predictions to>
 ```
 
-The [infer_effocr_onnx_multi.py](infer_effocr_onnx_multi.py) script accepts localizer models in ONNX format from any of the backends mentioned above. It also expects a recognizer in ONNX format. A [conversion script](https://github.com/jscarlson/ocr-as-retrieval/blob/main/scripts/recognizer_onnx_export.py) is provided for convenience. [infer_effocr_onnx_multi.py](infer_effocr_onnx_multi.py) runs _only_ on the CPU and implements multithreading in an attempt to minimize inference time. An example call to `[infer_effocr_onnx_multi.py](infer_effocr_onnx_multi.py) would look like:
+The [infer_effocr_onnx_multi.py](infer_effocr_onnx_multi.py) script accepts localizer models in ONNX format from any of the backends mentioned above. It also expects a recognizer in ONNX format. A [conversion script](scripts/recognizer_onnx_export.py) is provided for convenience. [infer_effocr_onnx_multi.py](infer_effocr_onnx_multi.py) runs _only_ on the CPU and implements multithreading in an attempt to minimize inference time. An example call to `[infer_effocr_onnx_multi.py](infer_effocr_onnx_multi.py) would look like:
 
 ```bash
 python ./infer_effocr_onnx_multi.py \
@@ -173,4 +172,4 @@ python ./infer_effocr_onnx_multi.py \
 
 ## Synthetic Data Generation
 
-If you're interested in synthetic data generation for, e.g., localizer pre-training, then you may also be interested in the companion repo to EffOCR, [EffSynth](https://github.com/dell-research-harvard/effsynth).
+If you're interested in synthetic data generation for, e.g., localizer pre-training, then you may also be interested in the companion repo to EffOCR, EffSynth.

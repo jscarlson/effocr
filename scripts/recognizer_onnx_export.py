@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
 """
 Created on Tue Nov 15 14:20:45 2022
-
-@author: bryan
 """
 import numpy as np
 import argparse
